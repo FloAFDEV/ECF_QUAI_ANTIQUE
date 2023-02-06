@@ -27,8 +27,9 @@ class User
     #[ORM\Column]
     private ?int $defaultPersons = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $role = null;
+
+    #[ORM\Column(type: Types::ARRAY, nullable: true)]
+    private array $roles = [];
 
     public function getId(): ?int
     {
@@ -83,14 +84,14 @@ class User
         return $this;
     }
 
-    public function getRole(): ?string
+    public function getRoles(): array
     {
-        return $this->role;
+        return $this->roles;
     }
 
-    public function setRole(string $role): self
+    public function setRoles(?array $roles): self
     {
-        $this->role = $role;
+        $this->roles = $roles;
 
         return $this;
     }
