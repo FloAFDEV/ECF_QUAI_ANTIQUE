@@ -1,5 +1,3 @@
-
-
 body {
   font-family: "Poppins", sans-serif;
   color: #444444;
@@ -274,6 +272,7 @@ h6 {
     left: -100%;
   }
 }
+
 
 /**
 * Mobile Navigation 
@@ -1120,7 +1119,7 @@ section {
 # Chefs
 --------------------------------------------------------------*/
 .chefs {
-  background: url("../img/chefs-bg.jpg") ;
+  background: url("../img/chefs-bg.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -1165,11 +1164,12 @@ section {
   transition: max-height 0.5s ease-in-out;
 }
 
-#chefs > div > div.row{
+#chefs>div>div.row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .chefs .member h4 {
   font-weight: 500;
   margin-bottom: 10px;

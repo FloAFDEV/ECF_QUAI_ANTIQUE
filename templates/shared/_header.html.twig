@@ -1,31 +1,45 @@
 <!-- ======= Top Bar ======= -->
-    <section id="topbar" class="d-flex align-items-center fixed-top topbar-transparent">
-        <div
-            class="container-fluid container-xl d-flex align-items-center justify-content-center justify-content-lg-start">
-            <i class="bi bi-phone d-flex align-items-center"><span>+33 600660066</span></i>
+<section id="topbar" class="d-flex align-items-center fixed-top topbar-transparent">
+	<div class="container-fluid container-xl d-flex align-items-center justify-content-center justify-content-lg-start">
+		<i class="bi bi-phone d-flex align-items-center">
+			<span>+33 600660066</span>
+		</i>
 
-        </div>
-    </section>
+	</div>
+</section>
 
-    <!-- ======= Début Header ======= -->
-    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
-        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-            <div class="logo me-auto">
-                <h1><a href="{{path('app_home')}}">Quai Antique</a></h1>
-            </div>
-            <nav id="navbar" class="navbar order-last order-lg-0">
-                <ul>
-                    <li><a class="nav-link scrollto active" href="{{path('app_home')}}">Accueil</a></li>
-                    <li><a class="nav-link scrollto" href="{{path('app_menus')}}" target="blank">Menus</a></li>
-                    <li><a class="nav-link scrollto" href="{{path('app_home')}}#chefs">Le Chef</a></li>
-                    <li><a class="nav-link scrollto" href="{{path('app_home')}}#gallery">Gallerie</a></li>
-                    <li><a class="nav-link scrollto" href="{{path('app_home')}}#contact">Contact</a></li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav>
-            <!-- Fin Top Bar -->
+<!-- ======= Début Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center header-transparent">
+	<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+		<div class="logo me-auto">
+			<h1>
+				<a href="{{path('app_home')}}">Quai Antique</a>
+			</h1>
+		</div>
+		<nav id="navbar" class="navbar order-last order-lg-0">
+			<ul>
+				<li>
+					<a class="nav-link scrollto active" href="{{path('app_home')}}">Accueil</a>
+				</li>
+				<li>
+					<a class="nav-link scrollto" href="{{path('app_menus')}}" target="blank">Menus</a>
+				</li>
+				<li>
+					<a class="nav-link scrollto" href="{{path('app_home')}}#chefs">Le Chef</a>
+				</li>
+				<li>
+					<a class="nav-link scrollto" href="{{path('app_home')}}#gallery">Gallerie</a>
+				</li>
+				<li>
+					<a class="nav-link scrollto" href="{{path('app_home')}}#contact">Contact</a>
+				</li>
+			</ul>
+			<i class="bi bi-list mobile-nav-toggle"></i>
+		</nav>
+		<!-- Fin Top Bar -->
 
-            <a href="#book-a-table" class="book-a-table-btn scrollto">Réserver une table</a>
-        </div>
-    </header>
-    <!-- Fin Header -->
+		<a class="book-a-table-btn scrollto" href="{{path('app_register')}}" target="blank">Réserver une
+			                                        table</a>
+	</div>
+</header>
+<!-- Fin Header -->
