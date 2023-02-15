@@ -1,23 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ReservationController!
+{% block title %}Inscription
 {% endblock %}
 
 {% block body %}
+	<section id="topbar" class="d-flex align-items-center fixed-top"></section>
+	<div class="container my-5" style="background-image : url({{ asset('asset/img/slide/slide-1.jpg') }})">
+		<div class="row text-white">
+			<div class="col-md-5">
+				<form method="post">
+					<h1 class="h3 mb-5 my-5 font-weight-normal fs-1 text-dark">Devenir un membre du Quai Antique</h1>
+
+					{% for flash_error in app.flashes('verify_email_error') %}
+						<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+					{% endfor %}
 
 
-	{% for flash_error in app.flashes('verify_email_error') %}
-		<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-	{% endfor %}
+					{{ form_start(registrationForm) }}
+					<fieldset class="mb-3">
+						<legend>Mon email</legend>
+						{{ form_row(registrationForm.email) }}
+					</fieldset>
+					<fieldset class="mb-3">
+						<legend>Mon mot de passe</legend>
 
-
-	{{ form_start(registrationForm) }}
-	{{ form_row(registrationForm.email) }}
-	{{ form_row(registrationForm.plainPassword, {
+						{{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
-	{{ form_row(registrationForm.agreeTerms) }}
+					</fieldset>
+					{{ form_row(registrationForm.RGPDConsent) }}
 
-	<button type="submit" class="btn">S'Identifier</button>
-	{{ form_end(registrationForm) }}
+					<button class="btn btn-lg btn-primary my-3" type="submit">M'inscrire</button>
+					{{ form_end(registrationForm) }}
+				</form>
+			</div>
+		</div>
+	</section>
 {% endblock %}

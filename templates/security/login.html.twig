@@ -4,13 +4,7 @@
 {% endblock %}
 
 {% block body %}
-	<section id="topbar" class="d-flex align-items-center fixed-top">
-		<div class="container-fluid container-xl d-flex align-items-center justify-content-center justify-content-lg-start">
-			<i class="bi bi-phone d-flex align-items-center">
-				<span>+33 600660066</span>
-			</i>
-		</div>
-	</section>
+	<section id="topbar" class="d-flex align-items-center fixed-top"></section>
 	<div class="container" style="background-image: url({{ asset('asset/img/slide/slide-1.jpg') }})">
 		<section class="container my-5">
 			<div class="row text-white">
@@ -26,7 +20,7 @@
 								<a href="{{ path('app_logout') }}">Me déconnecter</a>
 							</div>
 						{% endif %}
-						<h1 class="h3 mb-3 font-weight-normal">Devenir membre Quai Antique</h1>
+						<h1 class="h3 mb-5 my-5 font-weight-normal fs-1 text-dark">M'identifier</h1>
 						<label for="inputEmail">Email</label>
 						<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
 						<label for="inputPassword">Mot de passe</label>
@@ -45,5 +39,6 @@
 				</div>
 			</div>
 		</section>
+	</section>
 
-	{% endblock %}
+{% endblock %}
