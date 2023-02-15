@@ -13,13 +13,7 @@
 						{% if error %}
 							<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 						{% endif %}
-						{% if app.user %}
-							<div class="mb-3">
-								Vous êtes connecté(e) en tant que
-								{{ app.user.userIdentifier }},
-								<a href="{{ path('app_logout') }}">Me déconnecter</a>
-							</div>
-						{% endif %}
+
 						<h1 class="h3 mb-5 my-5 font-weight-normal fs-1 text-dark">M'identifier</h1>
 						<label for="inputEmail">Email</label>
 						<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
@@ -35,10 +29,17 @@
 						<button class="btn btn-lg btn-primary mt-3" type="submit">
 							Me connecter
 						</button>
+						{% if app.user %}
+							<div class="mb-3">
+								Vous êtes connecté(e) en tant que
+								{{ app.user.userIdentifier }}
+								<a href="{{ path('app_logout') }}">Me déconnecter</a>
+							</div>
+						{% endif %}
 					</form>
 				</div>
 			</div>
 		</section>
-	</section>
 
-{% endblock %}
+
+	{% endblock %}
