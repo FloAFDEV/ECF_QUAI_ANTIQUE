@@ -4,38 +4,31 @@
 {% endblock %}
 
 {% block body %}
-<section style="background: #232526">
-		<div class="container-xxl py-5 mt-5 w-auto">
+
 	<section id="topbar" class="d-flex align-items-center fixed-top"></section>
-	<div class="container my-5" style="background-image : url({{ asset('asset/img/slide/slide-1.jpg') }})">
-		<div class="row text-white">
-			<div class="col-md-5">
-				<form method="post">
-					<h1 class="h3 mb-5 my-5 font-weight-normal fs-1 text-dark">Devenir un membre du Quai Antique</h1>
-
-					{% for flash_error in app.flashes('verify_email_error') %}
-						<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-					{% endfor %}
-
-
-					{{ form_start(registrationForm) }}
-					<fieldset class="mb-3">
-						<legend>Mon email</legend>
-						{{ form_row(registrationForm.email) }}
-					</fieldset>
-					<fieldset class="mb-3">
-						<legend>Mon mot de passe</legend>
-
-						{{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-					</fieldset>
-					{{ form_row(registrationForm.RGPDConsent) }}
-
-					<button class="btn btn-lg btn-primary my-3" type="submit">M'inscrire</button>
-					{{ form_end(registrationForm) }}
-				</form>
+	<div class="container" style="background-image : url({{ asset('asset/img/slide/slide-1.jpg') }})">
+		<section class="container my-5">
+			<div class="row text-white">
+				<div class="col-md-5">
+					<form method="post">
+						{% for flash_error in app.flashes('verify_email_error') %}
+							<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+						{% endfor %}
+						<h1 class="h3 mb-5 my-5 font-weight-normal fs-1 text-dark">Devenir un membre du Quai Antique</h1>
+						{{ form_start(registrationForm) }}
+						<fieldset class="mb-3">
+							<legend>Mon e-mail</legend>
+							{{ form_row(registrationForm.email, {label: 'E-mail'}) }}
+						</fieldset>
+						<fieldset class="mb-3">
+							<legend>Mon mot de passe</legend>
+							{{ form_row(registrationForm.plainPassword, {label: 'Mot de passe'}) }}
+						</fieldset>
+						{{ form_row(registrationForm.RGPDConsent) }}
+						<button class="btn btn-lg btn-primary my-3" type="submit">M'inscrire</button>
+						{{ form_end(registrationForm) }}
+					</form>
+				</div>
 			</div>
-		</div>
-	</section>
-{% endblock %}
+		</section>
+	{% endblock %}

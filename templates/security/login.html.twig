@@ -13,7 +13,6 @@
 						{% if error %}
 							<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 						{% endif %}
-
 						<h1 class="h3 mb-5 my-5 font-weight-normal fs-1 text-dark">M'identifier</h1>
 						<label for="inputEmail">Email</label>
 						<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
@@ -40,6 +39,4 @@
 				</div>
 			</div>
 		</section>
-
-
 	{% endblock %}
