@@ -36,6 +36,11 @@ class RegistrationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
+            if ($user->getEmail() === "adminquaiantique@quaiant.fr") {
+                $user->setRoles(["ROLE_ADMIN"]);
+            } else {
+                $user->setRoles(["ROLE_USER"]);
+            }
             $user->setPassword(
                 $userPasswordHasher->hashPassword(
                     $user,
