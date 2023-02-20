@@ -4,6 +4,9 @@ namespace App\Controller\Admin;
 
 use App\Entity\Gallery;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+
 
 class GalleryCrudController extends AbstractCrudController
 {
@@ -12,14 +15,15 @@ class GalleryCrudController extends AbstractCrudController
         return Gallery::class;
     }
 
-    /*
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
             TextField::new('title'),
-            TextEditorField::new('description'),
+            ImageField::new('url')
+                ->setBasePath('uploads/gallery')
+                ->setUploadDir('public/uploads/gallery')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setRequired(false),
         ];
     }
-    */
 }

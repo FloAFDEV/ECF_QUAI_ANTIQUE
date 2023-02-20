@@ -16,6 +16,11 @@ class Categories
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $label = null;
 
+    public function __toString(): string
+    {
+        return $this->label;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

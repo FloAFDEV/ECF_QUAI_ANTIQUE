@@ -7,6 +7,11 @@ use App\Entity\Categories;
 use App\Entity\Dishes;
 use App\Entity\Formules;
 use App\Entity\Gallery;
+use App\Entity\Menus;
+use App\Entity\Openings;
+use App\Entity\Reservations;
+use App\Entity\Restaurant;
+use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -46,11 +51,16 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Bookings', 'fas fa-list', Bookings::class);
-        yield MenuItem::linkToCrud('Categories', 'fas fa-list', Categories::class);
-        yield MenuItem::linkToCrud('Dishes', 'fas fa-list', Dishes::class);
-        yield MenuItem::linkToCrud('Formules', 'fas fa-list', Formules::class);
-        yield MenuItem::linkToCrud('Gallery', 'fas fa-list', Gallery::class);
+        yield MenuItem::linkToCrud('Bookings', 'fas fa-check', Bookings::class);
+        yield MenuItem::linkToCrud('Categories', 'fas fa-random', Categories::class);
+        yield MenuItem::linkToCrud('Dishes', 'fas fa-utensils', Dishes::class);
+        yield MenuItem::linkToCrud('Formules', 'fab fa-wpforms', Formules::class);
+        yield MenuItem::linkToCrud('Gallery', 'fas fa-images', Gallery::class);
+        yield MenuItem::linkToCrud('Menus', 'fas fa-map', Menus::class);
+        yield MenuItem::linkToCrud('Openings', 'fas fa-hourglass', Openings::class);
+        yield MenuItem::linkToCrud('Reservations', 'far fa-calendar', Reservations::class);
+        yield MenuItem::linkToCrud('Restaurant', 'fas fa-building', Restaurant::class);
+        yield MenuItem::linkToCrud('User', 'fas fa-user-alt', User::class);
     }
 }
 //php bin/console make:admin:crud
