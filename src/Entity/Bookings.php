@@ -23,9 +23,6 @@ class Bookings
     #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTimeInterface $hour = null;
 
-    #[ORM\Column]
-    private ?int $user_id = null;
-
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $allergy = null;
 
