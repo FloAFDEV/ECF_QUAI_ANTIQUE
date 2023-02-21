@@ -64,3 +64,6 @@ class DishesRepository extends ServiceEntityRepository
 //        ;
 //    }
 }
+
+
+// Compare this snippet from src/Entity/Gallery.php:
