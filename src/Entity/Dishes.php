@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\DishesRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
@@ -20,6 +21,7 @@ class Dishes
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Formules(['category:list', 'category:item'])]
     private ?string $title = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
