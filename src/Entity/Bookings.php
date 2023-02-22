@@ -26,10 +26,8 @@ class Bookings
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $allergy = null;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+    #[ORM\Column(length: 255)]
+    private ?string $email = null;
 
     public function getPersons(): ?int
     {
@@ -67,14 +65,14 @@ class Bookings
         return $this;
     }
 
-    public function getUserId(): ?int
+    public function getEmail(): ?string
     {
-        return $this->user_id;
+        return $this->email;
     }
 
-    public function setUserId(int $user_id): self
+    public function setEmail(string $email): self
     {
-        $this->user_id = $user_id;
+        $this->email = $email;
 
         return $this;
     }
