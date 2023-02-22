@@ -20,6 +20,7 @@
 			<ul>
 				{% if app.user %}
 					{# Si l'utilisateur est connecté #}
+
 					<li>
 						<a class="nav-link scrollto active" href="{{path('app_home')}}">Accueil</a>
 					</li>
@@ -70,12 +71,12 @@
 				{% endif %}
 
 
-				<i class="bi bi-list mobile-nav-toggle"></i>
-			</nav>
-			<!-- Fin Top Bar -->
+				<!-- Fin Top Bar -->
 
-			<a class="book-a-table-btn scrollto" href="{{path('app_reservation')}}" target="blank">Réserver une
-																							table</a>
-		</div>
+				<a class="book-a-table-btn scrollto" href="{{path('app_reservation')}}" target="blank">Réserver une
+																												table</a>
+			</div>
+			<i class="bi bi-list mobile-nav-toggle"></i>
+		</nav>
 	</header>
 	<!-- Fin Header -->

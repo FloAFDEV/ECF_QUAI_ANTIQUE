@@ -3,12 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\DishesRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\AbstractCrudController;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -21,17 +15,14 @@ class Dishes
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Formules(['category:list', 'category:item'])]
     private ?string $title = null;
+
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
     #[ORM\Column]
     private ?int $price = null;
-
-    #[ORM\Column(nullable: true)]
-    private ?int $category_id = null;
 
     public function getId(): ?int
     {
@@ -70,18 +61,6 @@ class Dishes
     public function setPrice(int $price): self
     {
         $this->price = $price;
-
-        return $this;
-    }
-
-    public function getCategoryId(): ?int
-    {
-        return $this->category_id;
-    }
-
-    public function setCategoryId(?int $category_id): self
-    {
-        $this->category_id = $category_id;
 
         return $this;
     }
