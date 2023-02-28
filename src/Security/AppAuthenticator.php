@@ -46,8 +46,13 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
             return new RedirectResponse($targetPath);
         }
 
+        $email = $request->request->get('email', '');
+        if ($email === "adminquaiantique@quaiant.fr") {
+            return new RedirectResponse($this->urlGenerator->generate('admin'));
+        }
+
         // For example:
-        return new RedirectResponse($this->urlGenerator->generate('app_reservation'));
+        return new RedirectResponse($this->urlGenerator->generate('app_home'));
         // throw new \Exception('TODO: provide a valid redirect inside ' . __FILE__);
     }
 

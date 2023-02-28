@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\DishesRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -23,6 +25,17 @@ class Dishes
 
     #[ORM\Column]
     private ?int $price = null;
+
+    #[ORM\ManyToOne(inversedBy: 'dishes')]
+    private ?Categories $categories = null;
+
+    #[ORM\ManyToMany(targetEntity: Menus::class, inversedBy: 'dishes')]
+    private Collection $menus;
+
+    public function __construct()
+    {
+        $this->menus = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -61,6 +74,42 @@ class Dishes
     public function setPrice(int $price): self
     {
         $this->price = $price;
+
+        return $this;
+    }
+
+    public function getCategories(): ?Categories
+    {
+        return $this->categories;
+    }
+
+    public function setCategories(?Categories $categories): self
+    {
+        $this->categories = $categories;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Menus>
+     */
+    public function getMenus(): Collection
+    {
+        return $this->menus;
+    }
+
+    public function addMenu(Menus $menu): self
+    {
+        if (!$this->menus->contains($menu)) {
+            $this->menus->add($menu);
+        }
+
+        return $this;
+    }
+
+    public function removeMenu(Menus $menu): self
+    {
+        $this->menus->removeElement($menu);
 
         return $this;
     }

@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Bookings;
+use App\Entity\Reservations;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
@@ -24,7 +24,7 @@ class BookingsType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Bookings::class,
+            'data_class' =>  Reservations::class,
         ]);
     }
 }
