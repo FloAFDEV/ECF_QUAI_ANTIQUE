@@ -11,6 +11,9 @@ class MenusController extends AbstractController
     #[Route('/menus', name: 'app_menus')]
     public function index(): Response
     {
-        return $this->render('menus/index.html.twig', []);
+        return $this->render('menus/index.html.twig', [
+            'controller_name' => 'MenusController',
+
+        ]);
     }
 }
