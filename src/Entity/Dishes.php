@@ -19,12 +19,11 @@ class Dishes
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
-
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
-    #[ORM\Column]
-    private ?int $price = null;
+    #[ORM\Column(type: Types::FLOAT, nullable: true)]
+    private ?float $price = null;
 
     #[ORM\ManyToOne(inversedBy: 'dishes')]
     private ?Categories $categories = null;
@@ -66,12 +65,12 @@ class Dishes
         return $this;
     }
 
-    public function getPrice(): ?int
+    public function getPrice(): ?float
     {
         return $this->price;
     }
 
-    public function setPrice(int $price): self
+    public function setPrice(float $price): self
     {
         $this->price = $price;
 

@@ -7,20 +7,21 @@
 	<section style="background: #232526">
 		<div
 			class="container-xxl py-5 mt-5 w-auto">
-
 			<!-- ======= Début Hero ======= -->
 			<section id="hero">
 				<div class="hero-container">
 					<div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 						<div class="carousel-inner" role="listbox">
 							<div class="carousel-item active" style="background-image: url({{ asset('asset/img/slide/slide-1.jpg') }});">
-								<div class="elem-group">
-									<div class="container">
-										<div class="time-block">
-											<h4 class="mbr-fonts-style time-title display-5 text-white">Lundi - Samedi</h4>
-											<ul class="mbr-fonts-style work-list display-7 text-white">
-												<li>11h00 - 23h00</li>
-											</ul>
+								<div class="carousel-container">
+									<div class="carousel-content">
+										<div class="container">
+											<div class="time-block">
+												<h4 class="mbr-fonts-style time-title display-5 text-white">Lundi - Samedi</h4>
+												<ul class="mbr-fonts-style work-list display-7 text-white">
+													<li>11h00 - 23h00</li>
+												</ul>
+											</div>
 										</div>
 									</div>
 									<div class="form-1 col-lg-8 col-md-6" data-form-type="formoid">
@@ -52,7 +53,6 @@
 													<label class="form-label-outside mbr-fonts-style display-7 text-white" for="form-1-phone">Téléphone</label>
 													<input type="text" class="field display-7" name="phone" data-form-field="Phone" id="phone-form1-1k">
 												</div>
-
 											</div>
 											<div class="row input-main">
 												<div class="col-md-12 btn-row">
@@ -65,7 +65,10 @@
 									</div>
 								</div>
 							</div>
-						</div>
-					</section>
+						</section>
+					</div>
 				</div>
-			</section><!-- Fin Hero -->{% endblock %}
+			</div>
+		</section>
+		<!-- Fin Hero -->
+	{% endblock %}
