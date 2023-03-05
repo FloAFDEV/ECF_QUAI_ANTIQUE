@@ -2,7 +2,6 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Bookings;
 use App\Entity\Categories;
 use App\Entity\Dishes;
 use App\Entity\Formules;
@@ -50,17 +49,16 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Bookings', 'fas fa-check', Bookings::class);
-        yield MenuItem::linkToCrud('Categories', 'fas fa-random', Categories::class);
-        yield MenuItem::linkToCrud('Dishes', 'fas fa-utensils', Dishes::class);
+        yield MenuItem::linkToDashboard('Tableau de bord', 'fa fa-home');
+        yield MenuItem::linkToCrud('Catégories', 'fas fa-random', Categories::class);
+        yield MenuItem::linkToCrud('Plats', 'fas fa-utensils', Dishes::class);
         yield MenuItem::linkToCrud('Formules', 'fab fa-wpforms', Formules::class);
-        yield MenuItem::linkToCrud('Gallery', 'fas fa-images', Gallery::class);
+        yield MenuItem::linkToCrud('Galerie', 'fas fa-images', Gallery::class);
         yield MenuItem::linkToCrud('Menus', 'fas fa-map', Menus::class);
-        yield MenuItem::linkToCrud('Openings', 'fas fa-hourglass', Openings::class);
-        yield MenuItem::linkToCrud('Reservations', 'far fa-calendar', Reservations::class);
+        yield MenuItem::linkToCrud('Heures d\'ouvertures', 'fas fa-hourglass', Openings::class);
+        yield MenuItem::linkToCrud('Réservations', 'far fa-calendar', Reservations::class);
         yield MenuItem::linkToCrud('Restaurant', 'fas fa-building', Restaurant::class);
-        yield MenuItem::linkToCrud('User', 'fas fa-user-alt', User::class);
+        yield MenuItem::linkToCrud('Clients', 'fas fa-user-alt', User::class);
     }
 }
 //php bin/console make:admin:crud
