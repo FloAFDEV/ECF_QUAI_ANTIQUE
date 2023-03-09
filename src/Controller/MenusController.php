@@ -32,9 +32,15 @@ class MenusController extends AbstractController
             }
             array_push($result, $menuResult);
         }
+
         // dd($result);
+
+        
         return $this->render('menus/index.html.twig', [
             'menus' => $result,
+            'dishes' => $dishesRepository->findAll(),
+            'categories' => $categoriesRepository->findAll(),
+            
         ]);
     }
 }
