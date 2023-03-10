@@ -4,62 +4,71 @@
 {% endblock %}
 
 {% block body %}
-
-	<div class="container-fluid">
-		<section style="background: #232526">
-			<div class="container-xxl py-5 mt-5 w-auto">
-				<div class="container">
-					<h1 class="mb-5 text-center text-white fadeInUp" data-wow-delay="1s">Nos plats à la
-						<span class="text-warning">carte</span>
-						et nos
-						<span class="text-warning">menus</span>
-					</h1>
-				</div>
-				{% for menu in menus %}
-					<div class="tab-content text-white col-lg-5 d-flex align-items-center w-100 flex-column text-start ps-4 justify-content-between border-bottom">
-						{# <div id="tab-1" class="tab-pane fade show p-0 active"> #}
-						<h2>{{ menu.title }}</h2>
-						
-							<h4 class="d-flex justify-content-between border-bottom ">
-								<span>
-									{% for categorie in categories %}
-									</span>
-									<span class="text-warning">
-										<h4>{{ categorie.title }}</h4>
-									</span>
-								</h4>
-								<div class="fst-italic">
-									<ul class="list-unstyled">
-										{% for dishe in categorie.dishes %}
+	<section style="background: #232526">
+		<div class="tab-content text-white col-lg-5 d-flex align-items-center flex-column text-start justify-content-between border-bottom">
+			<div class="container-fluid">
+				<div class="container-xxl py-5 mt-5 w-auto">
+					<div class="container">
+						<h1 class="mb-5 text-center text-white fadeInUp" data-wow-delay="1s">Nos plats à la
+							<span class="text-warning">carte</span>
+							et nos
+							<span class="text-warning">menus</span>
+						</h1>
+					</div>
+					<div class="row mb-5 text-center">
+						{% for menu in menus %}
+							<div class="col-md-6">
+								<h2 class="text-warning">{{ menu.title }}</h2>
+								<ul class="list-unstyled">
+									{% for category in menu.categories %}
+										{% for dish in category.dishes %}
 											<li>
-												<p class="mb-0 text-start  text-white">{{ dishe.title }}
-													<div class=" text-end  text-warning">{{ dishe.price }}0
+												<p class="text-white">{{ dish.title }}
+													-
+													<span class="text-warning">{{ dish.price }}0
 														<span class="text-white">€</span>
-													</div>
+													</span>
 												</p>
 											</li>
 										{% endfor %}
-									</ul>
-									<h5 class="d-flex justify-content-between border-bottom">
-										<h5 class="d-flex justify-content-between border-bottom pb-2"></h5>
-									</h5>
-								</div>
-
-
-							</ul>
-
+									{% endfor %}
+								</ul>
+							</div>
 						{% endfor %}
-					{% endfor %}
-</div>
-
-				{% endblock %}
-				{% block javascripts %}
-					{{ parent() }}<script>
-						$(document).ready(function () {
+					</div>
+					<div class="tab-content text-white col-lg-5 d-flex align-items-center w-100 flex-column text-start ps-4 justify-content-between border-bottom">
+						<h4 class="d-flex justify-content-between border-bottom ">
+							<span>
+								{% for categorie in categories %}
+								</span>
+								<span class="text-warning">
+									<h4>{{ categorie.title }}</h4>
+								</span>
+							</h4>
+							<div class="fst-italic">
+								<ul class="list-unstyled">
+									{% for dishe in categorie.dishes %}
+										<li>
+											<p class="mb-0 text-start  text-white">-
+												{{ dishe.title }}
+												<span class=" text-start  text-warning">:
+													{{ dishe.price }}0
+													<span class="text-white">€</span>
+												</span>
+											</p>
+										</li>
+									{% endfor %}
+								</ul>
+							{% endfor %}
+						</div>
+					{% endblock %}
+					{% block javascripts %}
+						{{ parent() }}
+						<script>
+							$(document).ready(function () {
 $('.nav-tabs a').click(function () {
 $(this).tab('show');
 });
 });
-					</script>
-				{% endblock %}
-
+						</script>
+					{% endblock %}
