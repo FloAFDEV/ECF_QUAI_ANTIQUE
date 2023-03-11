@@ -4,39 +4,50 @@
 {% endblock %}
 
 {% block body %}
-	<section id="topbar" class="d-flex align-items-center fixed-top"></section>
-	<div class="container" style="background-image: url({{ asset('asset/img/slide/slide-1.jpg') }})">
-		<section class="container my-5">
-			<div class="row text-white">
-				<div class="col-md-5">
-					<form method="post">
-						{% if error %}
-							<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-						{% endif %}
-						<h1 class="h3 mb-5 my-5 font-weight-normal fs-1 text-dark">M'identifier</h1>
-						<label for="inputEmail">Email</label>
-						<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-						<label for="inputPassword">Mot de passe</label>
-						<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-						<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-						<div class="checkbox mb-3">
-							<label>
-								<input type="checkbox" name="_remember_me">
-								Remember me
-							</label>
-						</div>
-						<button class="btn btn-lg btn-primary mt-3" type="submit">
-							Me connecter
-						</button>
-						{% if app.user %}
-							<div class="mb-3">
-								Vous êtes connecté(e) en tant que
-								{{ app.user.userIdentifier }}
-								<a href="{{ path('app_logout') }}">Me déconnecter</a>
-							</div>
-						{% endif %}
-					</form>
+	<section style="background: #232526">
+		<div class="tab-content text-white d-flex align-items-center flex-column text-start justify-content-between border-bottom">
+			<div class="container py-5 mt-3 w-auto">
+				<div class="container">
+					<h1 class="text-center text-white pb-0">
+						<span class="text-warning">Bienvenue
+						</span>merci de vous
+						<span class="text-warning">connecter</span>
+					</h1>
 				</div>
+				<form method="post">
+					{% if error %}
+						<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+					{% endif %}
+					<h1 class="h3 mb-5 font-weight-normal fs-1 text-dark">M'identifier</h1>
+					<label for="inputEmail">
+						<span class="text-warning">Email</span>
+					</label>
+					<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+					<label for="inputPassword">
+						<span class="text-warning">Mot de passe</span>
+					</label>
+					<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+					<div class="checkbox mb-3">
+						<label>
+							<input type="checkbox" name="_remember_me"><span class="text-warning">
+								Remember me
+							</span>
+						</label>
+					</div>
+					<button class="btn btn-lg btn-info mt-3" type="submit">
+						Me connecter
+					</button>
+					{% if app.user %}
+						<div class="mb-3">
+							Vous êtes connecté(e) en tant que
+							{{ app.user.userIdentifier }}
+							<a href="{{ path('app_logout') }}">Me déconnecter</a>
+						</div>
+					{% endif %}
+				</form>
+
 			</div>
 		</section>
 	{% endblock %}
+
