@@ -49,8 +49,7 @@ class DishesRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
-
-
+}
 
 
 
@@ -82,7 +81,7 @@ class DishesRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
-}
+
 
 
 // Compare this snippet from src/Entity/Gallery.php:
