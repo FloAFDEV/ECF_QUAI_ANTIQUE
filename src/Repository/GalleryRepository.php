@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Repository;
 
 use App\Entity\Gallery;
@@ -40,27 +41,4 @@ class GalleryRepository extends ServiceEntityRepository
     }
 }
 
-//    /**
-//     * @return Gallery[] Returns an array of Gallery objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('f')
-//            ->andWhere('f.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('f.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?Gallery
-//    {
-//        return $this->createQueryBuilder('f')
-//            ->andWhere('f.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+// Path: src/Repository/GalleryRepository.php
